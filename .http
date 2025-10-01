@@ -1,3 +1,5 @@
+//Players
+
 ### GET
 GET  http://localhost:8080/api/v1/players
 
@@ -22,3 +24,56 @@ content-type: application/json
   "phoneNumber": "45999999999",
   "name": "Guilherme"
 }
+
+//Categorys
+
+### POST
+POST  http://localhost:8080/api/v1/categorys
+content-type: application/json
+
+{
+  "category": "A",
+  "description": "Categoria A",
+  "events": [
+    {
+      "name": "VITORIA",
+      "operation": "+",
+      "value": 30
+    },
+    {
+      "name": "VITORIA_LIDER",
+      "operation": "+",
+      "value": 50
+    },
+    {
+      "name": "DERROTA",
+      "operation": "+",
+      "value": 0
+    }
+  ]
+}
+
+### PUT 
+PUT   http://localhost:8080/api/v1/categorys/68dc7ead1b9c146138b9e412
+content-type: application/json
+
+{
+  "description": "Categoria A",
+  "events": [
+    {
+      "name": "VITORIA",
+      "operation": "+",
+      "value": 30
+    }
+  ]
+}
+
+### POST
+POST  http://localhost:8080/api/v1/categorys/A/player/68bcd60d7d93e4e7cec7cae9
+content-type: application/json
+
+### GET
+GET  http://localhost:8080/api/v1/categorys
+
+### GET
+GET  http://localhost:8080/api/v1/categorys/68dc7ead1b9c146138b9e412

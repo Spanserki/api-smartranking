@@ -10,5 +10,6 @@ import { PlayerSchema } from './interfaces/player.schema';
   ],
   controllers: [PlayersController],
   providers: [PlayersService],
+  exports: [MongooseModule],
 })
 export class PlayersModule {}

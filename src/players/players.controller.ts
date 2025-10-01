@@ -16,6 +16,15 @@ import { UpdatePlayerDto } from './dtos/update-player.dto';
 @Controller('/api/v1/players')
 export class PlayersController {
   constructor(private readonly playersService: PlayersService) {}
+  @Get()
+  async list() {
+    return await this.playersService.list();
+  }
+
+  @Get('/:_id')
+  async playerById(@Param('_id', PlayersValidationParamsPipe) _id: string) {
+    return await this.playersService.playerById(_id);
+  }
 
   @Post()
   @UsePipes(ValidationPipe)
@@ -30,15 +39,5 @@ export class PlayersController {
     @Param('_id', PlayersValidationParamsPipe) _id: string,
   ) {
     return await this.playersService.updatePlayer(data, _id);
-  }
-
-  @Get()
-  async list() {
-    return await this.playersService.list();
-  }
-
-  @Get('/:_id')
-  async playerById(@Param('_id', PlayersValidationParamsPipe) _id: string) {
-    return await this.playersService.playerById(_id);
   }
 }
