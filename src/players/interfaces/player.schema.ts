@@ -9,5 +9,5 @@ export const PlayerSchema = new mongoose.Schema(
     urlSelfPlayer: { type: String },
     positionRanking: { type: Number },
   },
-  { timestamps: true, collection: 'players' },
+  { timestamps: true, collection: 'players' }
 );

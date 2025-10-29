@@ -8,7 +8,7 @@ import { UpdatePlayerDto } from './dtos/update-player.dto';
 @Injectable()
 export class PlayersService {
   constructor(
-    @InjectModel('player') private readonly playerModel: Model<Player>,
+    @InjectModel('player') private readonly playerModel: Model<Player>
   ) {}
 
   async createPlayer(data: CreatePlayerDto) {

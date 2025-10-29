@@ -37,7 +37,7 @@ export class CategorysController {
   @UsePipes(ValidationPipe)
   async updateCategory(
     @Body() data: UpdateCategoryDto,
-    @Param('_id', CategorysValidationParamsPipe) _id: string,
+    @Param('_id', CategorysValidationParamsPipe) _id: string
   ) {
     return await this.categoryService.updateCategory(data, _id);
   }

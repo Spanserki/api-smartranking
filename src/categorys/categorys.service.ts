@@ -13,7 +13,7 @@ export class CategorysService {
     private readonly categoryModel: Model<Category>,
 
     @InjectModel('player')
-    private readonly playerModel: Model<Player>,
+    private readonly playerModel: Model<Player>
   ) {}
 
   async list() {
@@ -91,7 +91,7 @@ export class CategorysService {
 
     return await this.categoryModel.findByIdAndUpdate(
       { _id: findCategory._id },
-      { $set: findCategory },
+      { $set: findCategory }
     );
   }
 }
